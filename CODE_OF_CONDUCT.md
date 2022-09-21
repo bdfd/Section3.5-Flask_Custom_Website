@@ -1,10 +1,10 @@
 <!--
  * @Author: BDFD
- * @Date: 2022-02-23 18:43:36
- * @LastEditTime: 2022-02-23 18:43:39
+ * @Date: 2022-02-23 11:35:09
+ * @LastEditTime: 2022-02-23 11:45:13
  * @LastEditors: BDFD
- * @Description: 
- * @FilePath: \Heroku_Python_Template\CODE_OF_CONDUCT.md
+ * @Description:
+ * @FilePath: \3.0-Course-Name_Coursera_Template\CODE_OF_CONDUCT.md
 -->
 
 # Contributor Covenant Code of Conduct
