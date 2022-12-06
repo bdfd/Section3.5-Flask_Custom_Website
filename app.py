@@ -2,7 +2,7 @@
 Date         : 2022-12-05 14:13:08
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2022-12-05 14:28:08
+LastEditTime : 2022-12-06 13:38:06
 LastEditors  : BDFD
 Description  : 
 FilePath     : \app.py
@@ -18,20 +18,21 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def home():
   return render_template('index.html')
 
-@app.route('/home')
-def home():
-  return 'Hello! this is the main page.'
+@app.route('/login', methods=['POST','GET'])
+def login():
+  if request.method == 'POST':
+    user = request.form['nm']
+    print(user)
+    return redirect(url_for('user', usr=user))
+  else:
+    return render_template('login.html')
 
-@app.route('/<name>')
-def user(name):
-  return f'Hello {name}'
-
-@app.route('/admin')
-def admin():
-  return redirect(url_for('home'))
+@app.route('/<usr>')
+def user(usr):
+  return f'<h1>{usr}</h1>'
 
 if __name__ == '__main__':
   app.run(debug=True)
