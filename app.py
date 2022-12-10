@@ -2,7 +2,7 @@
 Date         : 2022-12-05 14:13:08
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2022-12-10 10:47:10
+LastEditTime : 2022-12-10 11:37:13
 LastEditors  : BDFD
 Description  : 
 FilePath     : \app.py
@@ -17,6 +17,7 @@ from datetime import timedelta
 from admin.admin import admin
 # from flask_sqlalchemy import SQLAlchemy
 from extensions import db
+from models import users
 
 app = Flask(__name__)
 app.secret_key = 'hello'
@@ -28,14 +29,14 @@ app.register_blueprint(admin, url_prefix="/admin")
 # db = SQLAlchemy()
 db.init_app(app)
 
-class users(db.Model):
-  _id = db.Column('id', db.Integer, primary_key=True)
-  name = db.Column('name', db.String(100))
-  email = db.Column('email', db.String(100))
+# class users(db.Model):
+#   _id = db.Column('id', db.Integer, primary_key=True)
+#   name = db.Column('name', db.String(100))
+#   email = db.Column('email', db.String(100))
 
-  def __init__(self, name, email):
-    self.name = name
-    self.email = email
+#   def __init__(self, name, email):
+#     self.name = name
+#     self.email = email
 
 @app.route('/')
 def home():
