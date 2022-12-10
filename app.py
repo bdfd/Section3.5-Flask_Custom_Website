@@ -2,7 +2,7 @@
 Date         : 2022-12-05 14:13:08
 Author       : BDFD,bdfd2005@gmail.com
 Github       : https://github.com/bdfd
-LastEditTime : 2022-12-10 11:37:13
+LastEditTime : 2022-12-10 12:06:45
 LastEditors  : BDFD
 Description  : 
 FilePath     : \app.py
@@ -18,6 +18,7 @@ from admin.admin import admin
 # from flask_sqlalchemy import SQLAlchemy
 from extensions import db
 from models import users
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 app.secret_key = 'hello'
@@ -28,6 +29,7 @@ app.register_blueprint(admin, url_prefix="/admin")
 
 # db = SQLAlchemy()
 db.init_app(app)
+migrate = Migrate(app, db)
 
 # class users(db.Model):
 #   _id = db.Column('id', db.Integer, primary_key=True)
